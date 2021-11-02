@@ -1,5 +1,4 @@
-import { computed, defineComponent, onBeforeMount, onMounted, ref, VNode, nextTick } from "vue";
-import { Icon } from '@vicons/utils'
+import {defineComponent,nextTick } from "vue";
 export default defineComponent({
     name: 'SIcon',
     props: {
@@ -28,7 +27,6 @@ export default defineComponent({
         const { color = 'black', depth = '5', size = '40' } = props;
         const slots = {
             svg: (e: any[]) => {
-                let renderIcon: any = null;
                 if (e.length > 1) {
                     return;
                 }
@@ -41,14 +39,12 @@ export default defineComponent({
                         e[0].el.style.fill = color;
                         e[0].el.style.width = size + 'px';
                     })
-                    renderIcon = (e)
                 } else {
                     e[0].props.opacity = arry[depth]
                     e[0].props.fill = color;
                     e[0].props.width = size;
-                    renderIcon = (e);
                 }
-                return renderIcon;
+                return e;
 
             }
         };
