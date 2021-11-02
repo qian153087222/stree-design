@@ -274,6 +274,11 @@
   resolved "https://registry.yarnpkg.com/@emmetio/scanner/-/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==
 
+"@emotion/hash@~0.8.0":
+  version "0.8.0"
+  resolved "https://registry.npm.taobao.org/@emotion/hash/download/@emotion/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
+  integrity sha1-u7/2iXj+/b5ozLUzvIy+HRr7VBM=
+
 "@rollup/pluginutils@^4.1.1":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.1.1.tgz#1d4da86dd4eded15656a57d933fda2b9a08d47ec"
@@ -281,6 +286,23 @@
   dependencies:
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
+
+"@types/node@~14.14.31":
+  version "14.14.45"
+  resolved "https://registry.npmmirror.com/@types/node/download/@types/node-14.14.45.tgz#ec2dfb5566ff814d061aef7e141575aedba245cf"
+  integrity sha1-7C37VWb/gU0GGu9+FBV1rtuiRc8=
+
+"@vicons/ionicons4@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.nlark.com/@vicons/ionicons4/download/@vicons/ionicons4-0.11.0.tgz#a60f5ead661d473f17103ad0051ce82ad771bbe6"
+  integrity sha1-pg9erWYdRz8XEDrQBRzoKtdxu+Y=
+
+"@vicons/utils@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.nlark.com/@vicons/utils/download/@vicons/utils-0.1.4.tgz#accea9226ff0078ebd80d00dcb63ef5e74b210ff"
+  integrity sha1-rM6pIm/wB469gNANy2PvXnSyEP8=
+  dependencies:
+    "@xicons/utils" "^0.1.4"
 
 "@vitejs/plugin-vue-jsx@^1.2.0":
   version "1.2.0"
@@ -463,6 +485,13 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.20.tgz#53746961f731a8ea666e3316271e944238dc31db"
   integrity sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==
 
+"@xicons/utils@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.nlark.com/@xicons/utils/download/@xicons/utils-0.1.4.tgz#cece50613b34d4b4c71e73bb0be92981067e11e1"
+  integrity sha1-zs5QYTs01LTHHnO7C+kpgQZ+EeE=
+  dependencies:
+    css-render "^0.13.2"
+
 acorn@^7.1.1:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
@@ -599,10 +628,24 @@ convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
+css-render@^0.13.2:
+  version "0.13.9"
+  resolved "https://registry.nlark.com/css-render/download/css-render-0.13.9.tgz#56f28c180a83a10ec610a12a9ad9fec087ac9dc1"
+  integrity sha1-VvKMGAqDoQ7GEKEqmtn+wIesncE=
+  dependencies:
+    "@emotion/hash" "~0.8.0"
+    "@types/node" "~14.14.31"
+    csstype "~3.0.5"
+
 csstype@^2.6.8:
   version "2.6.18"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.18.tgz#980a8b53085f34af313410af064f2bd241784218"
   integrity sha512-RSU6Hyeg14am3Ah4VZEmeX8H7kLwEEirXe6aU2IPfKNvhXwTflK5HQRDNI0ypQXoqmm+QPyG2IaPuQE5zMwSIQ==
+
+csstype@~3.0.5:
+  version "3.0.9"
+  resolved "https://registry.nlark.com/csstype/download/csstype-3.0.9.tgz#6410af31b26bd0520933d02cbc64fce9ce3fbf0b"
+  integrity sha1-ZBCvMbJr0FIJM9AsvGT86c4/vws=
 
 debug@^4.1.0:
   version "4.3.2"

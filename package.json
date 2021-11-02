@@ -7,9 +7,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@vicons/utils": "^0.1.4",
     "vue": "^3.2.16"
   },
   "devDependencies": {
+    "@vicons/ionicons4": "^0.11.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
     "sass": "^1.43.4",
