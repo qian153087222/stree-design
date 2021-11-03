@@ -1,0 +1,24 @@
+.AtPagination{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    .left_btn,.right_btn{
+        border: 1px solid rgb(213,228,238);
+        padding: 5px 15px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+    .content{
+        padding: 5px 0;
+        color: rgb(51,51,51);
+        box-sizing: border-box;
+        font-size: 16px;
+        // font-weight: bold;
+    }
+    .disabled{
+        color:rgb(194,194,194);
+        border-color:rgb(242,247,250)
+    }
+}
