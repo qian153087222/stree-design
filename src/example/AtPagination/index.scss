@@ -1,0 +1,12 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    &-flex {
+        display: flex;
+        align-items: center;
+    }
+}
+.h2 {
+    font-size: 24px;
+    cursor: pointer;
+}
