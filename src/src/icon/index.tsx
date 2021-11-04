@@ -1,4 +1,4 @@
-import {defineComponent,nextTick } from "vue";
+import { defineComponent, nextTick,VNode } from "vue";
 export default defineComponent({
     name: 'SIcon',
     props: {
@@ -20,35 +20,50 @@ export default defineComponent({
 
     },
     setup() {
-
+        /**
+         * @description 判断是否是组件
+         * @param value 组件
+         * @returns Boolean
+         */
+        const isComponent = (value:any): Boolean => {
+            return (typeof value.type === 'object' && value.type !== null) || typeof value.type?.render === 'function'
+        }
+        return {
+            isComponent
+        }
     },
     render(props: any) {
-        const { $slots } = this;
+        const { $slots, isComponent } = this;
         const { color = 'black', depth = '5', size = '40' } = props;
         const slots = {
-            svg: (e: any[]) => {
-                if (e.length > 1) {
-                    return;
+            svg: (e: Array<VNode>):Array<VNode> => {
+                const json = {
+                    "1": "0.1",
+                    "2": "0.3",
+                    "3": "0.5",
+                    "4": "0.7",
+                    "5": "1"
                 }
-                const arry: String[] = ['', '0.1', '0.3', '0.5', '0.7', '1']
-                // 判断是否是组件
+                const m = {
+                    opacity: json[depth],
+                    fill: color,
+                    width: size
+                }
+                e.map((item) => {
+                    if (isComponent(item)) {
+                        nextTick(() => {
+                            Object.assign(item.el?.style||{}, m);
+                        })
+                    } else {
+                        Object.assign(item.props||{}, m);
+                       
+                    }
+                })
 
-                if ((typeof e[0].type === 'object' && e[0].type !== null) || typeof e[0].type?.render === 'function') {
-                    nextTick(() => {
-                        e[0].el.style.opacity = arry[depth]
-                        e[0].el.style.fill = color;
-                        e[0].el.style.width = size + 'px';
-                    })
-                } else {
-                    e[0].props.opacity = arry[depth]
-                    e[0].props.fill = color;
-                    e[0].props.width = size;
-                }
                 return e;
 
             }
         };
-
         return (
             <>
                 {
