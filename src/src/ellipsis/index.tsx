@@ -1,5 +1,7 @@
 import { defineComponent } from "vue";
 import './style.scss'
+import { Data, Props, SetupContext } from './typing'
+
 export default defineComponent({
     name: 'SEllipsis',
     props: {
@@ -16,18 +18,19 @@ export default defineComponent({
             default: true
         }
     },
-    setup() {
-
+    setup(props: Data, { emit, slots, attrs }: SetupContext): Data {
+        return {
+            slots,
+            attrs
+        }
     },
-    render(props: any) {
-        const { $slots } = this;
-        const { $attrs } = props;
-        console.log($slots);
+    render(props: Props) {
+        const { attrs, slots } = props;
         return (
             <>
-                <span class="s-ellipsis" style={$attrs.style}>
-                    {$slots.default&&$slots.default()}
-                    {$slots.tooltip&&$slots.tooltip()}
+                <span class="truncate" style={ attrs.style } >
+                    { slots.default && slots.default() }
+                    { slots.tooltip && slots.tooltip() }
                 </span>
             </>
         )
