@@ -6,6 +6,7 @@
       <SButton type="primary"> primary </SButton>
       <br />
       <SButton type="default"> default </SButton>
+      <br />
     </div>
   </div>
 </template>

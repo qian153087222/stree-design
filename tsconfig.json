@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": "./src",
+=======
+    "baseUrl": ".",
+>>>>>>> 236e878582a8a4d04912db58b64bda9e56dcaa60
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
