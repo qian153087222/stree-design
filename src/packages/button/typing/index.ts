@@ -1,34 +1,45 @@
 export enum EattrType {
-    button, submit, reset
+  button,
+  submit,
+  reset,
 }
 export enum EIconPlacement {
-    left, right
+  left,
+  right,
 }
 
 export enum ESize {
-    tiny, small, medium, large
+  tiny,
+  small,
+  medium,
+  large,
 }
 
 export enum EType {
-    default='default', primary='primary', success='success', info='info', warning='warning', error='error'
+  default = 'default',
+  primary = 'primary',
+  success = 'success',
+  info = 'info',
+  warning = 'warning',
+  error = 'error',
 }
 
 export interface IProps {
-    "attr-type": EattrType,
-    block: boolean,
-    bordered: boolean,
-    circle: boolean,
-    color: string,
-    dashed: boolean,
-    disabled: boolean,
-    ghost: boolean,
-    "icon-placement": EIconPlacement,
-    keyboard: boolean,
-    loading: boolean,
-    round: boolean,
-    size: ESize,
-    text: boolean,
-    "text-color": string,
-    type: EType,
-    tag: string
+  'attr-type': EattrType
+  block: boolean
+  bordered: boolean
+  circle: boolean
+  color: string
+  dashed: boolean
+  disabled: boolean
+  ghost: boolean
+  'icon-placement': EIconPlacement
+  keyboard: boolean
+  loading: boolean
+  round: boolean
+  size: ESize
+  text: boolean
+  'text-color': string
+  type: EType
+  tag: string
 }

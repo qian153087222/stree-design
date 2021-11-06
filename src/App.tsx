@@ -1,14 +1,14 @@
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 import AtPagination from './example/AtPagination/index'
 import Icon from './example/Icon/index.vue'
 import SEllipsis from './example/ellipsis/index.vue'
 import SButton from './example/button/index.vue'
 export default defineComponent({
   name: 'App',
-  components:{
+  components: {
     AtPagination,
     SEllipsis,
-    Icon
+    Icon,
   },
   setup() {
     return () => (
@@ -18,6 +18,6 @@ export default defineComponent({
         <AtPagination />
         <SButton />
       </>
-    );
-  }
-});
+    )
+  },
+})
