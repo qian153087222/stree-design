@@ -18,15 +18,18 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-    },
-    "lint-staged": {
-      "src/**/*.js": [
-        "eslint --fix --ext .js",
-        "prettier --write",
-        "git add"
-      ]
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "{src,build,config}/**/*.{js,json,vue}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "src/style/**/*.scss": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
