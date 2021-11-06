@@ -19,6 +19,9 @@
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
   },
+  "lint-staged": {
+    "*.{js,css,md,ts,tsx}": "eslint --fix"
+  },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
