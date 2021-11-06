@@ -2,7 +2,13 @@
   <div class="block">
     <span class="h2">基础用法</span>
     <div class="block-flex">
-      <SButton>
+      <br>
+      <SButton type="primary">
+        primary
+      </SButton>
+      <br>
+      <SButton type="default">
+        default
       </SButton>
     </div>
   </div>

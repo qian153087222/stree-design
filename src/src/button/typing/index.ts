@@ -10,7 +10,7 @@ export enum ESize {
 }
 
 export enum EType {
-    default, primary, success, info, warning, error
+    default='default', primary='primary', success='success', info='info', warning='warning', error='error'
 }
 
 export interface IProps {

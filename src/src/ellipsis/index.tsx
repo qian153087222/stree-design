@@ -28,7 +28,7 @@ export default defineComponent({
         const { attrs, slots } = props;
         return (
             <>
-                <span class="truncate" style={ attrs.style } >
+                <span class="s-ellipsis" style={ attrs.style } >
                     { slots.default && slots.default() }
                     { slots.tooltip && slots.tooltip() }
                 </span>
