@@ -8,6 +8,7 @@ export default defineComponent({
   components: {
     AtPagination,
     SEllipsis,
+
     Icon,
   },
   setup() {

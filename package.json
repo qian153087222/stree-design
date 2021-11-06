@@ -22,13 +22,11 @@
     }
   },
   "lint-staged": {
-    "{src,build,config}/**/*.{js,json,vue}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "src/style/**/*.scss": [
-      "prettier --write",
-      "git add"
+    "*.{js,css,md,ts,tsx}": "prettier --write"
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier"
     ]
   },
   "devDependencies": {
