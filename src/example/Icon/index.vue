@@ -29,7 +29,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import SIcon from "./../../src/icon/index";
+import SIcon from "./../../packages/icon/index";
 import { IosAdd,IosAddCircle } from '@vicons/ionicons4'
 export default defineComponent({
     name:'Icon',

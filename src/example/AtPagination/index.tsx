@@ -1,5 +1,5 @@
 import { defineComponent, reactive, ref } from 'vue'
-import AtPagination from '../../src/AtPagination'
+import AtPagination from '../../packages/AtPagination'
 import './index.scss';
 
 interface Person {

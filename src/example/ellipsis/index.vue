@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import SEllipsis from "../../src/ellipsis/index";
+import SEllipsis from "../../packages/ellipsis/index";
 export default defineComponent({
   components: {
     SEllipsis,

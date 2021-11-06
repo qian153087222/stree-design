@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import SEllipsis from '../../src/ellipsis'
+import SEllipsis from '../../packages/ellipsis'
 
 
 export default defineComponent({

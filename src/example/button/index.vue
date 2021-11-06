@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import SButton from "../../src/button/index";
+import SButton from "../../packages/button/index";
 export default defineComponent({
   components: {
     SButton,

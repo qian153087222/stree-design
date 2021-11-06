@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import SIcon from '../../src/icon'
+import SIcon from '../../packages/icon'
 import './style/icon.scss';
 import './style/_common.scss';
 import { IosAdd,IosAddCircle } from '@vicons/ionicons4'
