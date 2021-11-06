@@ -5,18 +5,27 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "lint": "eslint --fix --ext .js,.vue,.ts,.tsx src"
+    "lint": "eslint --fix --ext .js,.vue,.ts,.tsx src",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.1",
     "@heroicons/vue": "^1.0.5",
     "@vicons/utils": "^0.1.4",
+    "lint-staged": "^11.2.6",
     "vue": "^3.2.16"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    },
+    "lint-staged": {
+      "src/**/*.js": [
+        "eslint --fix --ext .js",
+        "prettier --write",
+        "git add"
+      ]
     }
   },
   "devDependencies": {
