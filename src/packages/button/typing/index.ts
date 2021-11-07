@@ -1,18 +1,18 @@
 export enum EattrType {
-  button,
-  submit,
-  reset,
+  button = 'button',
+  submit = 'submit',
+  reset = 'reset',
 }
 export enum EIconPlacement {
-  left,
-  right,
+  left = 'left',
+  right = 'right',
 }
 
 export enum ESize {
-  tiny,
-  small,
-  medium,
-  large,
+  tiny = 'tiny',
+  small = 'small',
+  medium = 'medium',
+  large = 'large',
 }
 
 export enum EType {
@@ -25,7 +25,7 @@ export enum EType {
 }
 
 export interface IProps {
-  'attr-type': EattrType
+  attrType: EattrType
   block: boolean
   bordered: boolean
   circle: boolean
@@ -33,13 +33,13 @@ export interface IProps {
   dashed: boolean
   disabled: boolean
   ghost: boolean
-  'icon-placement': EIconPlacement
+  iconPlacement: EIconPlacement
   keyboard: boolean
   loading: boolean
   round: boolean
   size: ESize
   text: boolean
-  'text-color': string
+  textColor: string
   type: EType
   tag: string
 }

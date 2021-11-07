@@ -33,7 +33,7 @@ export default defineComponent({
   },
   render(props: any) {
     const { $slots, isComponent } = this
-    const { color = 'black', depth = '5', size = '40' } = props
+    const { color = 'black', depth = '5', size = '14' } = props
     const slots = {
       svg: (e: Array<VNode>): Array<VNode> => {
         const json = {

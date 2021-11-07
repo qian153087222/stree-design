@@ -3,9 +3,24 @@
     <span class="h2">基础用法</span>
     <div class="block-flex">
       <br />
-      <SButton type="primary"> primary </SButton>
+      <SButton type="primary">Primary</SButton>
       <br />
-      <SButton type="default"> default </SButton>
+      <SButton type="default" icon-placement="right">
+        <template #icon>
+          <SIcon>
+            <IosAdd />
+          </SIcon>
+        </template>
+        100元
+      </SButton>
+      <SButton type="default">
+        100元
+        <template #icon>
+          <SIcon>
+            <IosAdd />
+          </SIcon>
+        </template>
+      </SButton>
       <br />
     </div>
   </div>
@@ -14,9 +29,13 @@
 <script lang="ts">
   import { defineComponent } from 'vue'
   import SButton from '../../packages/button/index'
+  import SIcon from './../../packages/icon/index'
+  import { IosAdd } from '@vicons/ionicons4'
   export default defineComponent({
     components: {
       SButton,
+      IosAdd,
+      SIcon,
     },
   })
 </script>
