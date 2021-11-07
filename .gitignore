@@ -5,4 +5,7 @@ dist
 dist-ssr
 *.local
 .package-lock.json
-.yarn.lock
+package-lock.json
+yarn.lock
+your_node.js_installation_pathnode_cache
+yarn-error.log

@@ -2,40 +2,56 @@
   <div class="block">
     <span class="h2">基础用法</span>
     <div class="block-flex">
-      <br>
-      <SButton type="primary">
-        primary
+      <br />
+      <SButton type="primary">Primary</SButton>
+      <br />
+      <SButton type="default" icon-placement="right">
+        <template #icon>
+          <SIcon>
+            <IosAdd />
+          </SIcon>
+        </template>
+        100元
       </SButton>
-      <br>
       <SButton type="default">
-        default
+        100元
+        <template #icon>
+          <SIcon>
+            <IosAdd />
+          </SIcon>
+        </template>
       </SButton>
+      <br />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import SButton from "../../packages/button/index";
-export default defineComponent({
-  components: {
-    SButton,
-  },
-});
+  import { defineComponent } from 'vue'
+  import SButton from '../../packages/button/index'
+  import SIcon from './../../packages/icon/index'
+  import { IosAdd } from '@vicons/ionicons4'
+  export default defineComponent({
+    components: {
+      SButton,
+      IosAdd,
+      SIcon,
+    },
+  })
 </script>
 <style scoped lang="scss">
-.block {
+  .block {
     display: flex;
     flex-direction: column;
     align-items: center;
     &-flex {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
     }
-}
-.h2 {
+  }
+  .h2 {
     font-size: 24px;
     cursor: pointer;
-}
+  }
 </style>

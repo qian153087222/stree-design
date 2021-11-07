@@ -1,41 +1,53 @@
-import { defineComponent,computed } from "vue";
-import {EType} from './typing'
-import "./style/style.scss";
+import { defineComponent, computed } from 'vue'
+import { EIconPlacement, EType } from './typing'
+import './style/style.scss'
 export default defineComponent({
-    name: 'SButton',
-    props: {
-        type: {
-            type: String,
-            default: EType.primary,
-            validator(type:any) {
-                console.log();
-                if(!EType[type]){
-                    throw new Error(`按钮组件类型只能为${EType.default},${EType.error},${EType.info},${EType.primary},${EType.success},${EType.warning}`)
-                }
-                return true;
-            }
+  name: 'SButton',
+  props: {
+    iconPlacement: {
+      type: String,
+      default: EIconPlacement.left,
+      validator(type: any) {
+        if (!EIconPlacement[type]) {
+          throw new Error(`icon-placement值只能为${EIconPlacement.left},${EIconPlacement.right},你当前的值是${type}`)
         }
+        return true
+      },
     },
-    setup(props:any,{slots}) {
-        const className = computed(()=>[
-            's-button',
-            `s-button-${props.type}`
-        ]);
-        return {
-            className,
-            slots
+    type: {
+      type: String,
+      default: EType.primary,
+      validator(type: any) {
+        if (!EType[type]) {
+          throw new Error(
+            `按钮组件类型只能为${EType.default},${EType.error},${EType.info},${EType.primary},${EType.success},${EType.warning},你当前的值是${type}`,
+          )
         }
+        return true
+      },
     },
-    render(props: any) {
-        const {className,slots} = props;
-        return (
-            <>
-                <button class={className}>
-                    <span>{slots.default()}</span>
-                </button>
-
-            </>
-        )
+  },
+  setup(props: any, { slots }) {
+    const className = computed(() => ['s-button', `s-button-${props.type}`])
+    return {
+      className,
+      slots,
     }
-
+  },
+  render(props: any) {
+    const { className, slots, iconPlacement } = props
+    const renderContent =
+      iconPlacement === EIconPlacement.left ? (
+        <>
+          <span class="s-button__icon">{slots.icon && slots.icon()}</span>
+          <span class="s-button__content">{slots.default && slots.default()}</span>
+        </>
+      ) : (
+        <>
+          <span class="s-button__content">{slots.default && slots.default()}</span>
+          <span class="s-button__icon">{slots.icon && slots.icon()}</span>
+        </>
+      )
+    return <button class={className}>{renderContent}</button>
+  },
 })

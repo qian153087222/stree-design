@@ -1,69 +1,82 @@
-@import "./var.scss";
-@import "./mixins/mixins.scss";
-$bg-list:(
-    primary:$primary,
-    default:$default,
+@import './var.scss';
+@import './mixins/mixins.scss';
+$bg-list: (
+  primary: $primary,
+  default: $default,
 );
-$color-list:(
-    primary:$primary-text-color,
-    default:$default-text-color,
+$color-list: (
+  primary: $primary-text-color,
+  default: $default-text-color,
 );
-$border-color-list:(
-    primary:$primary-border-color,
-    default:$default-border-color,
+$border-color-list: (
+  primary: $primary-border-color,
+  default: $default-border-color,
 );
-$active-bg-list:(
-    primary:$primary-active-bg-color,
-    default:$default-active-bg-color,
+$active-bg-list: (
+  primary: $primary-active-bg-color,
+  default: $default-active-bg-color,
 );
-$active-border-color-list:(
-    primary:$primary-active-border-color,
-    default:$default-active-border-color,
+$active-border-color-list: (
+  primary: $primary-active-border-color,
+  default: $default-active-border-color,
 );
-$active-text-color-list:(
-    primary:$primary-active-text-color,
-    default:$default-active-text-color,
+$active-text-color-list: (
+  primary: $primary-active-text-color,
+  default: $default-active-text-color,
 );
-$hover-border-color-list:(
-    primary:$primary-hover-border-color,
-    default:$default-hover-border-color,
+$hover-border-color-list: (
+  primary: $primary-hover-border-color,
+  default: $default-hover-border-color,
 );
-$hover-bg-color-list:(
-    primary:$primary-hover-bg-color,
-    default:$default-hover-bg-color,
+$hover-bg-color-list: (
+  primary: $primary-hover-bg-color,
+  default: $default-hover-bg-color,
 );
-$hover-text-color-list:(
-    primary:$primary-hover-text-color,
-    default:$default-hover-text-color,
+$hover-text-color-list: (
+  primary: $primary-hover-text-color,
+  default: $default-hover-text-color,
 );
 @include blockquote(button) {
-    @include bgColor($bg-list);
-   
-    @include textColor($color-list);
-    position: relative;
-    display: inline-flex;
-    font-size:$font-size;
-    border-radius: $border-radius;
-    z-index: 1;
-    border: none;
-    outline: none;
-    padding: 0.5em 1em;
-    &:hover {
-        cursor: pointer;
-        @include bgColor($hover-bg-color-list);
-        @include borderColor($hover-border-color-list);
-        @include textColor($hover-text-color-list);
-    }
-    &:active {
-        @include bgColor($active-bg-list);
-        @include borderColor($active-border-color-list);
-        @include textColor($active-text-color-list);
-    }
-    @include borderColor($border-color-list);
-    // &-active::before {
-    //     transition: all 0.75s ease-out;
-    //     border: 1px solid#e6f7ff;
-    //     transform: scale(1.3, 1.35);
-    //     opacity: 0;
-    // }
+  @include bgColor($bg-list);
+
+  @include textColor($color-list);
+  position: relative;
+  display: inline-flex;
+  font-size: $font-size;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius;
+  z-index: 1;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  height: 34px;
+  line-height: 1;
+  &:hover {
+    cursor: pointer;
+    @include bgColor($hover-bg-color-list);
+    @include borderColor($hover-border-color-list);
+    @include textColor($hover-text-color-list);
+  }
+  &:active {
+    @include bgColor($active-bg-list);
+    @include borderColor($active-border-color-list);
+    @include textColor($active-text-color-list);
+  }
+  @include borderColor($border-color-list);
+  // &-active::before {
+  //     transition: all 0.75s ease-out;
+  //     border: 1px solid#e6f7ff;
+  //     transform: scale(1.3, 1.35);
+  //     opacity: 0;
+  // }
+}
+.s-button__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+.s-button__content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }

@@ -28,30 +28,30 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-import SIcon from "./../../packages/icon/index";
-import { IosAdd,IosAddCircle } from '@vicons/ionicons4'
-export default defineComponent({
-    name:'Icon',
-  components: {
-    SIcon,
-    IosAdd,
-    IosAddCircle
-  },
-});
+  import { defineComponent } from 'vue'
+  import SIcon from './../../packages/icon/index'
+  import { IosAdd, IosAddCircle } from '@vicons/ionicons4'
+  export default defineComponent({
+    name: 'Icon',
+    components: {
+      SIcon,
+      IosAdd,
+      IosAddCircle,
+    },
+  })
 </script>
 <style scoped lang="scss">
-.block {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  &-flex {
+  .block {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    &-flex {
+      display: flex;
+      align-items: center;
+    }
   }
-}
-.h2 {
-  font-size: 24px;
-  cursor: pointer;
-}
+  .h2 {
+    font-size: 24px;
+    cursor: pointer;
+  }
 </style>
