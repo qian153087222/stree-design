@@ -38,7 +38,7 @@ export default defineComponent({
     const { className, slots, iconPlacement } = props
     console.log(props)
     const renderContent =
-      iconPlacement === 'left' ? (
+      iconPlacement === EIconPlacement.left ? (
         <>
           <span class="s-button__icon">{slots.icon && slots.icon()}</span>
           <span class="s-button__content">{slots.default && slots.default()}</span>
