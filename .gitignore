@@ -8,3 +8,4 @@ dist-ssr
 package-lock.json
 yarn.lock
 your_node.js_installation_pathnode_cache
+yarn-error.log
