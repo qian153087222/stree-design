@@ -36,7 +36,6 @@ export default defineComponent({
   },
   render(props: any) {
     const { className, slots, iconPlacement } = props
-    console.log(props)
     const renderContent =
       iconPlacement === EIconPlacement.left ? (
         <>
