@@ -41,18 +41,14 @@ export default defineComponent({
       iconPlacement === 'left' ? (
         <>
           <span class="s-button__icon">{slots.icon && slots.icon()}</span>
-          <span class="s-button__content">{slots.default()}</span>
+          <span class="s-button__content">{slots.default && slots.default()}</span>
         </>
       ) : (
         <>
-          <span class="s-button__content">{slots.default()}</span>
+          <span class="s-button__content">{slots.default && slots.default()}</span>
           <span class="s-button__icon">{slots.icon && slots.icon()}</span>
         </>
       )
-    return (
-      <>
-        <button class={className}>{renderContent}</button>
-      </>
-    )
+    return <button class={className}>{renderContent}</button>
   },
 })
