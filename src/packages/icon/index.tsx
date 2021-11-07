@@ -18,7 +18,7 @@ export default defineComponent({
       default: undefined,
     },
   },
-  setup() {
+  setup(props: any, { slots }) {
     /**
      * @description 判断是否是组件
      * @param value 组件
@@ -28,13 +28,13 @@ export default defineComponent({
       return (typeof value.type === 'object' && value.type !== null) || typeof value.type?.render === 'function'
     }
     return {
+      slots,
       isComponent,
     }
   },
   render(props: any) {
-    const { $slots, isComponent } = this
-    const { color = 'black', depth = '5', size = '14' } = props
-    const slots = {
+    const { color = 'black', depth = '5', size = '14', slots, isComponent } = props
+    const slot: any = {
       svg: (e: Array<VNode>): Array<VNode> => {
         const json = {
           '1': '0.1',
@@ -61,6 +61,6 @@ export default defineComponent({
         return e
       },
     }
-    return <>{$slots.default && slots.svg($slots.default())}</>
+    return <>{slots.default && slot.svg(slots.default())}</>
   },
 })
