@@ -9,16 +9,30 @@
         box-sizing: border-box;
         border-radius: 8px;
         font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        svg{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            fill: rgb(51,51,51);
+        }
     }
     .content{
         padding: 5px 0;
+        // flex: 1;
         color: rgb(51,51,51);
         box-sizing: border-box;
         font-size: 16px;
+        min-width: 100px;
+        text-align: center;
         // font-weight: bold;
     }
     .disabled{
         color:rgb(194,194,194);
-        border-color:rgb(242,247,250)
+        border-color:rgb(242,247,250);
+        svg{
+            fill: rgb(194,194,194);
+        }
     }
 }

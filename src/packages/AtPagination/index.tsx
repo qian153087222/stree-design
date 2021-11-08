@@ -1,11 +1,8 @@
-import { defineComponent } from 'vue'
+import { defineComponent,PropType } from 'vue'
+import {Props} from './typing'
+import { IosArrowForward,IosArrowBack } from '@vicons/ionicons4'
 import './index.scss'
-interface Props {
-  onChange: (a: number | string) => void
-  total: number | string
-  pageSize: number | string
-  current: number | string
-}
+
 export default defineComponent({
   name: 'AtPagination',
   props: {
@@ -21,44 +18,66 @@ export default defineComponent({
       type: [Number, String],
       default: 1,
     },
-    onChange: {
-      type: Function,
-      default: () => {},
+    isIcon:{
+      type:Boolean,
+      default: true,
     },
+    onChange: {
+      type: Function as PropType<Props['onChange']> ,
+      default: () => { },
+    },
+  },
+  setup(props:Props) {
+    const onPageChange = (a: string) => {
+      if (a === 's') {
+        if (Number(props.current) <= 1) {
+          return false
+        }
+        props.onChange(Number(props.current) - 1)
+      } else {
+        if (Number(props.current) >= Math.floor(Number(props.total) / Number(props.pageSize))) {
+          return false
+        }
+        props.onChange(Number(props.current) + 1)
+      }
+    }
+    const isShowtop = (): string => {
+      return Number(props.current) <= 1 ? 'disabled' : ''
+    }
+    const isShowbottom = (): string => {
+      return Number(props.current) >= Math.floor(Number(props.total) / Number(props.pageSize)) ? 'disabled' : ''
+    }
+    const numberShow=():string=>{
+       return `${props.current}/${Number(props.total) / Number(props.pageSize)}`
+    }
+    const iconOrText=(a:string):any=>{
+      let result=null
+      if(a==='top'){
+        result= props.isIcon ? <IosArrowBack /> : "上一个"
+      }
+      if(a==='bottom'){
+        result= props.isIcon?<IosArrowForward />:'下一个'
+      }
+      return result
+    }
+    return {
+      onPageChange,
+      isShowtop,
+      isShowbottom,
+      numberShow,
+      iconOrText
+    }
   },
   // 目前缺少
   // 1.上一页下一页文字ICON自定义
   // 2.文字大小自定义
-  render(props: Props) {
-    const { total = 10, pageSize = 1, current = 1, onChange } = props
+  render() {
     return (
       <>
         <div class="AtPagination">
-          <div
-            class={`left_btn ${Number(current) <= 1 ? 'disabled' : ''}`}
-            onClick={() => {
-              if (Number(current) <= 1) {
-                return false
-              }
-              onChange(Number(current) - 1)
-            }}
-          >
-            上一个
-          </div>
-          <div class="content">
-            {current}/{Number(total) / Number(pageSize)}
-          </div>
-          <div
-            onClick={() => {
-              if (Number(current) >= Math.floor(Number(total) / Number(pageSize))) {
-                return false
-              }
-              onChange(Number(current) + 1)
-            }}
-            class={`right_btn ${Number(current) >= Math.floor(Number(total) / Number(pageSize)) ? 'disabled' : ''}`}
-          >
-            下一个
-          </div>
+          <div  class={`left_btn ${this.isShowtop()}`}  onClick={() => {this.onPageChange('s')}}>{this.iconOrText('top')}</div>
+          <div class="content">{this.numberShow()}</div>
+          <div onClick={() => { this.onPageChange('x') }}  class={`right_btn ${this.isShowbottom()}`} >{this.iconOrText('bottom')}</div>
         </div>
       </>
     )
