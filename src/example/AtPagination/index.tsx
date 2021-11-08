@@ -37,7 +37,7 @@ export default defineComponent({
             }}
           />
         </div>
-        <div class="block-flex">
+        <div style={{marginTop:'10px'}} class="block-flex">
           <AtPagination
             total={this.data.total}
             pageSize={this.data.pageSize}
