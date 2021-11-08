@@ -11,10 +11,10 @@
 
 ## 文档预览
 ```
-> npm run docs:dev
+npm run docs:dev
 ```
 
 ## 运行
 ```
-> npm run dev
+npm run dev
 ```
