@@ -1,47 +1,32 @@
-$primary:#18a058;
-$default:#fff;
+$primary: #18a058;
+$default: white;
 
+$default-text-color: rgb(51, 54, 57);
+$primary-text-color: white;
 
-$default-text-color:rgb(51, 54, 57);
-$primary-text-color:white;
+$primary-border-color: #18a058;
+$default-border-color: rgb(224, 224, 230);
 
-$primary-border-color:#18a058;
-$default-border-color:rgb(224, 224, 230);
+$primary-active-bg-color: #0c7a43;
+$default-active-bg-color: #fff;
 
+$primary-active-border-color: #0c7a43;
+$default-active-border-color: #36ad6a;
 
+$primary-active-text-color: #fff;
+$default-active-text-color: #36ad6a;
 
+$primary-hover-text-color: #fff;
+$default-hover-text-color: #0c7a43;
 
-$primary-active-bg-color:#0c7a43;
-$default-active-bg-color:#fff;
+$primary-hover-bg-color: #36ad6a;
+$default-hover-bg-color: #fff;
 
+$primary-hover-border-color: #36ad6a;
+$default-hover-border-color: #0c7a43;
 
-$primary-active-border-color:#0c7a43;
-$default-active-border-color:#36ad6a;
-
-
-$primary-active-text-color:#fff;
-$default-active-text-color:#36ad6a;;
-
-
-
-
-$primary-hover-text-color:#fff;
-$default-hover-text-color:#0c7a43;
-
-$primary-hover-bg-color:#36ad6a;
-$default-hover-bg-color:#fff;
-
-$primary-hover-border-color:#36ad6a;
-$default-hover-border-color:#0c7a43;
-
-
-
-
-
-
-$font-size:12px;
-$border-radius:3px;
-
-
+$font-size: 12px;
+$border-radius: 3px;
+$icon-margin: 6px;
 
 // default='default', primary='primary', success='success', info='info', warning='warning', error='error'

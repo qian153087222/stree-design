@@ -76,6 +76,12 @@ $hover-text-color-list: (
 .s-button__icon {
   flex-shrink: 0;
   display: inline-flex;
+  margin: $icon-margin;
+  margin-left: 0;
+}
+.s-button__content ~ .s-button__icon {
+  margin: $icon-margin;
+  margin-right: 0;
 }
 .s-button__content {
   display: flex;
