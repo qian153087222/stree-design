@@ -33,6 +33,7 @@ $namespace:'s-';
             right: 0;
             border: 1px solid;
             border-color: #{$value};
+            border-radius: 3px;
             transform: scale(1);
             transform-origin: center;
         }      

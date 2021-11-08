@@ -16,7 +16,7 @@ export default defineComponent({
     },
     type: {
       type: String,
-      default: EType.primary,
+      default: EType.default,
       validator(type: any) {
         if (!EType[type]) {
           throw new Error(
