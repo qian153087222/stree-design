@@ -49,7 +49,9 @@ $hover-text-color-list: (
   z-index: 1;
   border: none;
   outline: none;
+  font-size: 14px;
   padding: 0 14px;
+  font-weight: 400;
   height: 34px;
   line-height: 1;
   &:hover {
@@ -74,6 +76,12 @@ $hover-text-color-list: (
 .s-button__icon {
   flex-shrink: 0;
   display: inline-flex;
+  margin: $icon-margin;
+  margin-left: 0;
+}
+.s-button__content ~ .s-button__icon {
+  margin: $icon-margin;
+  margin-right: 0;
 }
 .s-button__content {
   display: flex;
