@@ -37,6 +37,18 @@ export default defineComponent({
             }}
           />
         </div>
+        <div class="block-flex">
+          <AtPagination
+            total={this.data.total}
+            pageSize={this.data.pageSize}
+            current={this.data.current}
+            isIcon={true}
+            onChange={(a: number | string) => {
+              console.log(a)
+              this.data.current = a
+            }}
+          />
+        </div>
       </div>
     )
   },
