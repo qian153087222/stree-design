@@ -50,7 +50,7 @@ export default defineComponent({
     const renderContent =
       iconPlacement === EIconPlacement.left ? (
         <>
-          <span class="s-button__icon">{slots.icon && slots.icon()}</span>
+          {slots.icon &&<span class="s-button__icon">{slots.icon()}</span>}
           <span class="s-button__content">{slots.default && slots.default()}</span>
           <div aria-hidden="true" class={spread}></div>
         </>
@@ -58,7 +58,7 @@ export default defineComponent({
         <>
           <div aria-hidden="true" class={spread}></div>
           <span class="s-button__content">{slots.default && slots.default()}</span>
-          <span class="s-button__icon">{slots.icon && slots.icon()}</span>
+          {slots.icon &&<span class="s-button__icon">{slots.icon()}</span>}
         </>
       )
     return (

@@ -23,7 +23,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,ts,tsx}": "eslint --fix"
+    "*.{js,css,ts,tsx}": "eslint --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
