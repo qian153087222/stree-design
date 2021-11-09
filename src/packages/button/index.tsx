@@ -1,4 +1,4 @@
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, ref } from 'vue'
 import { EIconPlacement, EType } from './typing'
 import './style/style.scss'
 export default defineComponent({
@@ -29,25 +29,42 @@ export default defineComponent({
   },
   setup(props: any, { slots }) {
     const className = computed(() => ['s-button', `s-button-${props.type}`])
+    const spread = ref('n-base-wave')
+    const onMouseup = (type: any) => {
+      console.log(type)
+      const spreadActive = ` button-wave-spread-${type}`
+      spread.value += spreadActive
+      setTimeout(() => {
+        spread.value = 'n-base-wave'
+      }, 600)
+    }
     return {
       className,
+      spread,
       slots,
+      onMouseup,
     }
   },
   render(props: any) {
-    const { className, slots, iconPlacement } = props
+    const { className, slots, iconPlacement, onMouseup, spread, type } = props
     const renderContent =
       iconPlacement === EIconPlacement.left ? (
         <>
           <span class="s-button__icon">{slots.icon && slots.icon()}</span>
           <span class="s-button__content">{slots.default && slots.default()}</span>
+          <div aria-hidden="true" class={spread}></div>
         </>
       ) : (
         <>
+          <div aria-hidden="true" class={spread}></div>
           <span class="s-button__content">{slots.default && slots.default()}</span>
           <span class="s-button__icon">{slots.icon && slots.icon()}</span>
         </>
       )
-    return <button class={className}>{renderContent}</button>
+    return (
+      <button class={className} onMouseup={() => onMouseup(type)}>
+        {renderContent}
+      </button>
+    )
   },
 })
