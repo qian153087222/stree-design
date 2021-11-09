@@ -3,42 +3,50 @@
 $bg-list: (
   primary: $primary,
   default: $default,
+  info: $info,
 );
 $color-list: (
   primary: $primary-text-color,
   default: $default-text-color,
+  info: $info-text-color,
 );
 $border-color-list: (
   primary: $primary-border-color,
   default: $default-border-color,
+  info: $info-border-color,
 );
 $active-bg-list: (
   primary: $primary-active-bg-color,
   default: $default-active-bg-color,
+  info: $info-active-bg-color,
 );
 $active-border-color-list: (
   primary: $primary-active-border-color,
   default: $default-active-border-color,
+  info: $info-active-border-color,
 );
 $active-text-color-list: (
   primary: $primary-active-text-color,
   default: $default-active-text-color,
+  info: $info-active-text-color,
 );
 $hover-border-color-list: (
   primary: $primary-hover-border-color,
   default: $default-hover-border-color,
+  info: $info-hover-border-color,
 );
 $hover-bg-color-list: (
   primary: $primary-hover-bg-color,
   default: $default-hover-bg-color,
+  info: $info-hover-bg-color,
 );
 $hover-text-color-list: (
   primary: $primary-hover-text-color,
   default: $default-hover-text-color,
+  info: $info-hover-text-color,
 );
 @include blockquote(button) {
   @include bgColor($bg-list);
-
   @include textColor($color-list);
   position: relative;
   display: inline-flex;
@@ -46,7 +54,7 @@ $hover-text-color-list: (
   justify-content: center;
   align-items: center;
   border-radius: $border-radius;
-  z-index: 1;
+  z-index: 2;
   border: none;
   outline: none;
   font-size: 14px;
@@ -64,14 +72,18 @@ $hover-text-color-list: (
     @include bgColor($active-bg-list);
     @include borderColor($active-border-color-list);
     @include textColor($active-text-color-list);
+    
+    
   }
-  @include borderColor($border-color-list);
-  // &-active::before {
-  //     transition: all 0.75s ease-out;
-  //     border: 1px solid#e6f7ff;
-  //     transform: scale(1.3, 1.35);
-  //     opacity: 0;
+  // &-active::before{
+  //   position: absolute;
+  //   border: 4px solid red;
   // }
+  // &-active:active::before{
+  //   position: absolute;
+  //   animation: warn .3s 1;
+  // }
+  @include borderColor($border-color-list);
 }
 .s-button__icon {
   flex-shrink: 0;
@@ -83,8 +95,33 @@ $hover-text-color-list: (
   margin: $icon-margin;
   margin-right: 0;
 }
+.n-base-wave {
+  position: absolute;
+  pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-iteration-count: 1;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0,0,0.2,1) cubic-bezier(0,0,0.2,1);
+}
+
 .s-button__content {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
 }
+@include shaDow($hover-border-color-list);
+// @keyframes warn {
+//   from{
+//     box-shadow: 0 0 0.5px 0 $ripple-color;
+//     opacity: 1;
+//   }
+//   to{
+//     // don't use exact 5px since chrome will display the animation with glitches
+//     box-shadow: 0 0 0.5px 4.5px $ripple-color;
+//     opacity: 0;
+//   }
+// }
+

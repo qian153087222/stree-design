@@ -1,6 +1,6 @@
-import { defineComponent,PropType } from 'vue'
-import {Props} from './typing'
-import { IosArrowForward,IosArrowBack } from '@vicons/ionicons4'
+import { defineComponent, PropType } from 'vue'
+import { Props } from './typing'
+import { IosArrowForward, IosArrowBack } from '@vicons/ionicons4'
 import './index.scss'
 
 export default defineComponent({
@@ -18,16 +18,16 @@ export default defineComponent({
       type: [Number, String],
       default: 1,
     },
-    isIcon:{
-      type:Boolean,
+    isIcon: {
+      type: Boolean,
       default: true,
     },
     onChange: {
-      type: Function as PropType<Props['onChange']> ,
-      default: () => { },
+      type: Function as PropType<Props['onChange']>,
+      default: () => {},
     },
   },
-  setup(props:Props) {
+  setup(props: Props) {
     const onPageChange = (a: string) => {
       if (a === 's') {
         if (Number(props.current) <= 1) {
@@ -47,16 +47,16 @@ export default defineComponent({
     const isShowbottom = (): string => {
       return Number(props.current) >= Math.floor(Number(props.total) / Number(props.pageSize)) ? 'disabled' : ''
     }
-    const numberShow=():string=>{
-       return `${props.current}/${Number(props.total) / Number(props.pageSize)}`
+    const numberShow = (): string => {
+      return `${props.current}/${Number(props.total) / Number(props.pageSize)}`
     }
-    const iconOrText=(a:string):any=>{
-      let result=null
-      if(a==='top'){
-        result= props.isIcon ? <IosArrowBack /> : "上一个"
+    const iconOrText = (a: string): any => {
+      let result = null
+      if (a === 'top') {
+        result = props.isIcon ? <IosArrowBack /> : '上一个'
       }
-      if(a==='bottom'){
-        result= props.isIcon?<IosArrowForward />:'下一个'
+      if (a === 'bottom') {
+        result = props.isIcon ? <IosArrowForward /> : '下一个'
       }
       return result
     }
@@ -65,7 +65,7 @@ export default defineComponent({
       isShowtop,
       isShowbottom,
       numberShow,
-      iconOrText
+      iconOrText,
     }
   },
   // 目前缺少
@@ -75,9 +75,23 @@ export default defineComponent({
     return (
       <>
         <div class="AtPagination">
-          <div  class={`left_btn ${this.isShowtop()}`}  onClick={() => {this.onPageChange('s')}}>{this.iconOrText('top')}</div>
+          <div
+            class={`left_btn ${this.isShowtop()}`}
+            onClick={() => {
+              this.onPageChange('s')
+            }}
+          >
+            {this.iconOrText('top')}
+          </div>
           <div class="content">{this.numberShow()}</div>
-          <div onClick={() => { this.onPageChange('x') }}  class={`right_btn ${this.isShowbottom()}`} >{this.iconOrText('bottom')}</div>
+          <div
+            onClick={() => {
+              this.onPageChange('x')
+            }}
+            class={`right_btn ${this.isShowbottom()}`}
+          >
+            {this.iconOrText('bottom')}
+          </div>
         </div>
       </>
     )
