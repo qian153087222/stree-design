@@ -7,3 +7,14 @@
 + test：测试
 + chore：构建过程或辅助工具的变动
 > 例子:    feat: xxxxx
+
+
+## 文档预览
+```
+npm run docs:dev
+```
+
+## 运行
+```
+npm run dev
+```

@@ -3,10 +3,10 @@ import AtPagination from '../../packages/AtPagination'
 import './index.scss'
 
 interface Person {
-  current: number | string    // 当前第几页
-  total: number | string      // 总条数
-  pageSize: number | string   // 一页多少条
-  isIcon:boolean              //使用icon还是文字  false 文字  true 图标
+  current: number | string // 当前第几页
+  total: number | string // 总条数
+  pageSize: number | string // 一页多少条
+  isIcon: boolean //使用icon还是文字  false 文字  true 图标
 }
 export default defineComponent({
   name: 'AtPagination',
@@ -15,7 +15,7 @@ export default defineComponent({
       current: 1,
       total: 10,
       pageSize: 1,
-      isIcon:false
+      isIcon: false,
     })
     return {
       data,
@@ -37,7 +37,7 @@ export default defineComponent({
             }}
           />
         </div>
-        <div style={{marginTop:'10px'}} class="block-flex">
+        <div style={{ marginTop: '10px' }} class="block-flex">
           <AtPagination
             total={this.data.total}
             pageSize={this.data.pageSize}

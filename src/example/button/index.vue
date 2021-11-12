@@ -3,9 +3,7 @@
     <span class="h2">基础用法</span>
     <div class="block-flex">
       <br />
-      <SButton type="primary">Primary</SButton>
-      <br />
-      <SButton type="default" icon-placement="right">
+      <SButton type="primary" icon-placement="right">
         <template #icon>
           <SIcon>
             <IosAdd />
@@ -13,11 +11,30 @@
         </template>
         100元
       </SButton>
+      <br />
       <SButton type="default">
         100元
         <template #icon>
           <SIcon>
-            <IosAdd />
+            <IosAmericanFootball />
+          </SIcon>
+        </template>
+      </SButton>
+      <br />
+      <SButton type="info">
+        100元
+        <template #icon>
+          <SIcon>
+            <IosAmericanFootball />
+          </SIcon>
+        </template>
+      </SButton>
+      <br>
+       <SButton type="success">
+        100元
+        <template #icon>
+          <SIcon>
+            <IosAmericanFootball />
           </SIcon>
         </template>
       </SButton>
@@ -30,12 +47,13 @@
   import { defineComponent } from 'vue'
   import SButton from '../../packages/button/index'
   import SIcon from './../../packages/icon/index'
-  import { IosAdd } from '@vicons/ionicons4'
+  import { IosAdd, IosAmericanFootball } from '@vicons/ionicons4'
   export default defineComponent({
     components: {
       SButton,
       IosAdd,
       SIcon,
+      IosAmericanFootball,
     },
   })
 </script>
