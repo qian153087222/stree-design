@@ -43,3 +43,14 @@ export interface IProps {
   type: EType
   tag: string
 }
+// export interface Data {
+//   type:string,
+//   className:string,
+//   slots:unknown,
+//   iconPlacement:EIconPlacement,
+//   onMouseup:()=>void,
+//   spread:string,
+//   border:string,
+//   content:string,
+//   [key: string]: unknown
+// }

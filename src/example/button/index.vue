@@ -29,6 +29,15 @@
           </SIcon>
         </template>
       </SButton>
+      <br>
+       <SButton type="success">
+        100元
+        <template #icon>
+          <SIcon>
+            <IosAmericanFootball />
+          </SIcon>
+        </template>
+      </SButton>
       <br />
     </div>
   </div>

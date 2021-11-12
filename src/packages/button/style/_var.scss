@@ -1,45 +1,90 @@
 $primary: #18a058;
 $default: white;
 $info: #2080f0;
+$warning: #f0a020;
+$error: #d03050;
 
 $default-text-color: rgb(51, 54, 57);
 $primary-text-color: white;
 $info-text-color:#FFF;
+$warning-text-color:#FFF;
+$error-text-color:#FFF;
+
+$primary-dashed-color: #18a058;
+$default-dashed-color: rgb(51, 54, 57);
+$info-dashed-color: #2080f0;
+$warning-dashed-color: #f0a020;
+$error-dashed-color: #d03050;
+
 
 $primary-border-color: #18a058;
 $default-border-color: rgb(224, 224, 230);
 $info-border-color: #2080f0;
+$warning-border-color: #f0a020;
+$error-border-color: #d03050;
+
+
 
 $primary-active-bg-color: #0c7a43;
 $default-active-bg-color: #fff;
 $info-active-bg-color:#1060c9;
+$warning-active-bg-color:#c97c10;
+$error-active-bg-color:#ab1f3f;
 
 $primary-active-border-color: #0c7a43;
 $default-active-border-color: #36ad6a;
 $info-active-border-color: #1060c9;
+$warning-active-border-color: #c97c10;
+$error-active-border-color: #ab1f3f;
+
 
 $primary-active-text-color: #fff;
 $default-active-text-color: #36ad6a;
 $info-active-text-color: #FFF;
-
+$warning-active-text-color: #FFF;
+$error-active-text-color: #FFF;
 
 $primary-hover-text-color: #fff;
 $default-hover-text-color: #0c7a43;
 $info-hover-text-color: #FFF;
+$warning-hover-text-color: #FFF;
+$error-hover-text-color: #FFF;
 
 
 $primary-hover-bg-color: #36ad6a;
 $default-hover-bg-color: #fff;
 $info-hover-bg-color: #4098fc;
+$warning-hover-bg-color: #fcb040;
+$error-hover-bg-color: #de576d;
 
 
 $primary-hover-border-color: #36ad6a;
 $default-hover-border-color: #0c7a43;
 $info-hover-border-color: #4098fc;
+$warning-hover-border-color: #fcb040;
+$error-hover-border-color: #de576d;
 
 
 $font-size: 12px;
 $border-radius: 3px;
 $icon-margin: 6px;
+
+
+$tiny-font-size:12px;
+$tiny-height:22px;
+$tiny-padding:0 6px;
+
+$small-font-size:14px;
+$small-height:28px;
+$small-padding:0 10px;
+
+
+$medium-font-size:14px;
+$medium-height:34px;
+$medium-padding:0 14px;
+
+$large-font-size:15px;
+$large-height:40px;
+$large-padding:0 18px;
 
 // default='default', primary='primary', success='success', info='info', warning='warning', error='error'
