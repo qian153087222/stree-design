@@ -4,46 +4,100 @@ $bg-list: (
   primary: $primary,
   default: $default,
   info: $info,
+  success: $primary,
+  warning: $warning,
+  error: $error,
+);
+$dashed-color-list:(
+  primary: $primary-dashed-color,
+  default: $default-dashed-color,
+  info: $info-dashed-color,
+  success: $primary-dashed-color,
+  warning: $warning-dashed-color,
+  error: $error-dashed-color,
 );
 $color-list: (
   primary: $primary-text-color,
   default: $default-text-color,
   info: $info-text-color,
+  success: $primary-text-color,
+  warning: $warning-text-color,
+  error: $error-text-color,
 );
 $border-color-list: (
   primary: $primary-border-color,
   default: $default-border-color,
   info: $info-border-color,
+  success: $primary-border-color,
+  warning: $warning-border-color,
+  error: $error-border-color,
 );
 $active-bg-list: (
   primary: $primary-active-bg-color,
   default: $default-active-bg-color,
   info: $info-active-bg-color,
+  success: $primary-active-bg-color,
+  warning: $warning-active-bg-color,
+  error: $error-active-bg-color,
 );
 $active-border-color-list: (
   primary: $primary-active-border-color,
   default: $default-active-border-color,
   info: $info-active-border-color,
+  success: $primary-active-border-color,
+  warning: $warning-active-border-color,
+  error: $error-active-border-color,
 );
 $active-text-color-list: (
   primary: $primary-active-text-color,
   default: $default-active-text-color,
   info: $info-active-text-color,
+  success: $primary-active-text-color,
+  warning: $warning-active-text-color,
+  error: $error-active-text-color,
 );
 $hover-border-color-list: (
   primary: $primary-hover-border-color,
   default: $default-hover-border-color,
   info: $info-hover-border-color,
+  success: $primary-hover-border-color,
+  warning: $warning-hover-border-color,
+  error: $error-hover-border-color,
 );
 $hover-bg-color-list: (
   primary: $primary-hover-bg-color,
   default: $default-hover-bg-color,
   info: $info-hover-bg-color,
+  success: $primary-hover-bg-color,
+  warning: $warning-hover-bg-color,
+  error: $error-hover-bg-color,
 );
 $hover-text-color-list: (
   primary: $primary-hover-text-color,
   default: $default-hover-text-color,
   info: $info-hover-text-color,
+  success: $primary-hover-text-color,
+  warning: $warning-hover-text-color,
+  error: $error-hover-text-color,
+);
+// 按钮大小
+$size-padding-list:(
+  tiny:$tiny-padding,
+  small:$small-padding,
+  medium:$medium-padding,
+  large:$large-padding
+);
+$size-font-size-list:(
+  tiny:$tiny-font-size,
+  small:$small-font-size,
+  medium:$medium-font-size,
+  large:$large-font-size
+);
+$size-height-list:(
+  tiny:$tiny-height,
+  small:$small-height,
+  medium:$medium-height,
+  large:$large-height
 );
 @include blockquote(button) {
   @include bgColor($bg-list);
@@ -62,17 +116,18 @@ $hover-text-color-list: (
   font-weight: 400;
   height: 34px;
   line-height: 1;
+  @include dashed($dashed-color-list);
+
   &:hover {
     cursor: pointer;
     @include bgColor($hover-bg-color-list);
-    @include borderColor($hover-border-color-list);
+    @include borderContent($hover-border-color-list);
     @include textColor($hover-text-color-list);
   }
   &:active {
     @include bgColor($active-bg-list);
-    @include borderColor($active-border-color-list);
+    @include borderContent($active-border-color-list);
     @include textColor($active-text-color-list);
-    
     
   }
   // &-active::before{
@@ -83,7 +138,10 @@ $hover-text-color-list: (
   //   position: absolute;
   //   animation: warn .3s 1;
   // }
-  @include borderColor($border-color-list);
+  @include sizePadding($size-padding-list);
+  @include sizeFontSize($size-font-size-list);
+  @include sizeHeight($size-height-list);
+  @include borderContent($border-color-list);
 }
 .s-button__icon {
   flex-shrink: 0;
@@ -112,7 +170,9 @@ $hover-text-color-list: (
   align-items: center;
   flex-wrap: nowrap;
 }
+
 @include shaDow($hover-border-color-list);
+@include borderContent($border-color-list);
 // @keyframes warn {
 //   from{
 //     box-shadow: 0 0 0.5px 0 $ripple-color;
