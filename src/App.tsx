@@ -3,6 +3,8 @@ import AtPagination from './example/AtPagination/index'
 import Icon from './example/Icon/index.vue'
 import SEllipsis from './example/ellipsis/index.vue'
 import SButton from './example/button/index.vue'
+import Switch from './example/Switch/index'
+
 export default defineComponent({
   name: 'App',
   components: {
@@ -17,6 +19,7 @@ export default defineComponent({
         <SEllipsis></SEllipsis>
         <AtPagination />
         <SButton />
+        <Switch />
       </>
     )
   },
