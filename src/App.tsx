@@ -5,12 +5,14 @@ import SEllipsis from './example/ellipsis/index.vue'
 import SButton from './example/button/index.vue'
 import Switch from './example/Switch/index'
 
+import Scarousel from './example/carousel/index.vue'
 export default defineComponent({
   name: 'App',
   components: {
     AtPagination,
     SEllipsis,
     Icon,
+    Scarousel
   },
   setup() {
     return () => (
@@ -20,6 +22,7 @@ export default defineComponent({
         <AtPagination />
         <SButton />
         <Switch />
+        <Scarousel/>
       </>
     )
   },
