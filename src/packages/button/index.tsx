@@ -9,7 +9,7 @@ export default defineComponent({
       default: EIconPlacement.left,
       validator(type: any) {
         if (!EIconPlacement[type]) {
-          throw new Error(`icon-placement值只能为${EIconPlacement.left},${EIconPlacement.right},你当前的值是${type}`)
+          console.error(`Button组件的属性icon-placement值只能为${EIconPlacement.left},${EIconPlacement.right},你当前的值是${type}`)
         }
         return true
       },
@@ -17,14 +17,20 @@ export default defineComponent({
     size:{
       type:String,
       default:ESize.large,
+      validator(type: any) {
+        if (!ESize[type]) {
+          console.error(`Button组件的属性size值只能为${ESize.large},${ESize.medium},${ESize.small},${ESize.tiny},你当前的值是${type}`)
+        }
+        return true
+      },
     },
     type: {
       type: String,
       default: EType.default,
       validator(type: any) {
         if (!EType[type]) {
-          throw new Error(
-            `按钮组件类型只能为${EType.default},${EType.error},${EType.info},${EType.primary},${EType.success},${EType.warning},你当前的值是${type}`,
+          console.error(
+            `Button组件的属性type只能为${EType.default},${EType.error},${EType.info},${EType.primary},${EType.success},${EType.warning},你当前的值是${type}`,
           )
         }
         return true
