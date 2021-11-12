@@ -18,3 +18,7 @@ npm run docs:dev
 ```
 npm run dev
 ```
+
+## 主题颜色方案
+
+选用antdcolors这个库来生成主题色
