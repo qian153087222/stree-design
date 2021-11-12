@@ -1,3 +1,5 @@
+组件参考naiveUI实现
+
 ## commit 提交格式
 + feat：新功能（feature）
 + fix：修补bug
@@ -18,3 +20,7 @@ npm run docs:dev
 ```
 npm run dev
 ```
+
+## 主题颜色方案
+
+选用antdcolors这个库来生成主题色
