@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-12 14:41:14
- * @LastEditTime: 2021-11-12 16:26:39
+ * @LastEditTime: 2021-11-12 16:40:25
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /stree-design/stree-design/docs/components/button/index.md
@@ -50,7 +50,7 @@
 
 - 图标
 
-:::demo 有 tiny、small、medium 和 large 尺寸。
+:::demo icon-placement 默认居左 right居右
 ```vue
 <template>
    <s-button type="default" style="margin-right:12px;">
@@ -61,7 +61,7 @@
         </template>
         100元
       </s-button>
-      <s-button style="margin-right:12px;" type="default" icon-placement="right">
+      <s-button type="default" icon-placement="right">
         <template #icon>
           <s-icon>
             <s-ios-american-football/>
