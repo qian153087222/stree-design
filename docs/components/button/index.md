@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-12 14:41:14
- * @LastEditTime: 2021-11-12 15:22:37
- * @LastEditors: your name
+ * @LastEditTime: 2021-11-12 16:26:39
+ * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /stree-design/stree-design/docs/components/button/index.md
 -->
@@ -44,6 +44,31 @@
    <s-button style="margin-right:12px;" size="small">小</s-button>
    <s-button style="margin-right:12px;" size="medium">不小</s-button>
    <s-button style="margin-right:12px;" size="large">不不小</s-button>
+</template>
+```
+:::
+
+- 图标
+
+:::demo 有 tiny、small、medium 和 large 尺寸。
+```vue
+<template>
+   <s-button type="default" style="margin-right:12px;">
+        <template #icon>
+          <s-icon>
+            <s-ios-american-football/>
+          </s-icon>
+        </template>
+        100元
+      </s-button>
+      <s-button style="margin-right:12px;" type="default" icon-placement="right">
+        <template #icon>
+          <s-icon>
+            <s-ios-american-football/>
+          </s-icon>
+        </template>
+        100元
+      </s-button>
 </template>
 ```
 :::
