@@ -144,17 +144,17 @@ $size-height-list:(
   @include borderContent($border-color-list);
 }
 .s-button__icon {
-  flex-shrink: 0;
-  display: inline-flex;
-  // margin: $icon-margin;
-  // margin-left: 0;
-  margin: 0 6px 0 0;
+  // flex-shrink: 0;
+  // display: inline-flex;
+  margin: $icon-margin;
+  margin-left: 0;
+  // margin: 0  0 0 6px;
 
 }
 .s-button__content ~ .s-button__icon {
-  // margin: $icon-margin;
-  // margin-right: 0;
-  margin: 0  0 0 6px;
+  margin: $icon-margin;
+  margin-right: 0;
+  // margin: 0  0 0 6px;
 }
 .n-base-wave {
   position: absolute;

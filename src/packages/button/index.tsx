@@ -1,4 +1,4 @@
-import { defineComponent, computed, ref, SetupContext } from 'vue'
+import { defineComponent, ref, SetupContext } from 'vue'
 import { EIconPlacement, EType,ESize } from './typing'
 import './style/style.scss'
 export default defineComponent({
@@ -78,7 +78,9 @@ export default defineComponent({
     const renderContent =
       iconPlacement === EIconPlacement.left ? (
         <>
-          {slots.icon && <span class="s-button__icon">{slots.icon()}</span>}
+          {slots.icon && <span class="s-button__icon">
+          <div class="s-icon-slot">
+          {slots.icon()}</div></span>}
           <span class={content}>{slots.default && slots.default()}</span>
           {/*控制动画*/}
           <div aria-hidden="true" class={spread}></div>
