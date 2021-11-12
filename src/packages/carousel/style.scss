@@ -1,0 +1,36 @@
+.s-swipe-wrap {
+    height: 45px;
+    overflow: hidden;
+
+    .s-swipe-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            display: flex;
+            height: 45px;
+            width: 200px;
+
+            &:nth-child(1) {
+                background-color: #ccc;
+            }
+
+            &:nth-child(2) {
+                background-color: green;
+            }
+
+            &:nth-child(3) {
+                background-color: blue;
+            }
+
+            &:nth-child(4) {
+                background-color: yellow;
+            }
+        }
+    }
+
+    .task-box-swipe-list-title {
+        height: 45px;
+    }
+}
