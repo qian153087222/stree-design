@@ -26,6 +26,7 @@
     "*.{js,css,ts,tsx}": "eslint --fix"
   },
   "devDependencies": {
+    "@ant-design/colors": "^6.0.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@tailwindcss/postcss7-compat": "^2.2.17",
