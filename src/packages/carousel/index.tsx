@@ -1,43 +1,39 @@
 /*
  * @Author: your name
  * @Date: 2021-11-12 14:58:12
- * @LastEditTime: 2021-11-12 18:01:21
+ * @LastEditTime: 2021-11-15 09:41:56
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /stree-design/stree-design/src/packages/carousel/index.tsx
  */
 
 import { defineComponent, onMounted, reactive, toRefs } from 'vue'
+import { Props } from './typing';
 import './style.scss'
 export default defineComponent({
     name: 'Scarousel',
     props: {
-        expandTrigger: {
-            type: Function,
-            default: undefined,
-        },
-        lineClamp: {
+        interval: {
             type: [Number, String],
-            default: undefined,
+            default: 5000,
         },
-        tooltip: {
-            type: Boolean,
-            default: true,
-        },
+        direction: {
+            type: String,
+            default: 'top',
+        }
     },
-    setup() {
+    setup({ interval, direction }) {
         const state = reactive({
             list: ['https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg', 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg', 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg']
         });
-
-        let swiperTime = null;
-
         const swiperList = (el: HTMLElement) => {
             const list = state.list;
             var len = state.list.length;
+            let swiperTime = null;
             if (len > 1) { // 列表项大于1时，才做swiper动画。
                 list.push(list[0]); // 这里是模拟，在dom元素的末尾，添加列表第一项，真实需要自己做dom操作。
                 let cur = 0;
+                const isY = direction === 'top';//是否是y轴
                 const swpier = (delay: number) => {
                     swiperTime = setTimeout(function () {
                         cur += 1;
@@ -45,17 +41,20 @@ export default defineComponent({
                             // 这时表示到了最后一个复制块，直接无动画移动到真实的第一个元素
                             cur = 0;
                             el.style.transition = "none";
-                            el.style.transform = "translateY(0)";
+                            el.style.transform = `translate${isY ? 'Y' : 'X'}(0)`;
                             swpier(3000);
                         } else {
-                            var top = -45 * cur;
-                            el.style.transform = "translateY(" + top + "px)";
+                            const swper = document.querySelector(".s-swipe-wrap") as HTMLElement;
+                            const swipeContainer = document.querySelector(".s-swipe-container") as HTMLElement;
+                            swipeContainer.style.flexDirection = isY ? "column" : "none";
+                            const client = -(isY ? swper.clientHeight : swper.clientWidth) * cur;
+                            el.style.transform = `translate${isY ? 'Y' : 'X'}(${client}px)`;
                             el.style.transition = "all 1s";
-                            cur === len ? swpier(3000) : swpier(4000); // 如果是最后一个复制块，间隔时间需要修改，加上最上面的替换块，合计2s。
+                            cur === len ? swpier(Number(interval)) : swpier(Number(interval) + 1000); // 如果是最后一个复制块，间隔时间需要修改，加上最上面的替换块，合计2s。
                         }
                     }, delay)
                 }
-                swpier(4000);
+                swpier(Number(interval));
             }
         }
         onMounted(() => {
@@ -71,7 +70,7 @@ export default defineComponent({
         const { list } = props;
         return <div class='s-swipe-wrap'>
             <div class="s-swipe-container" id="s-swiperWrap">
-                {list.map((images:String)=><img src={images} />) }
+                {list.map((images: string) => <img src={images} />)}
             </div>
         </div>
     },
